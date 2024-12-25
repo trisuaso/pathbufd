@@ -1,0 +1,14 @@
+[package]
+name = "pathbufd"
+version = "0.1.0"
+edition = "2021"
+description = "PathBuf with display + format macro"
+authors = ["trisuaso", "caffeineee"]
+repository = "https://github.com/trisuaso/pathbufd"
+license = "MIT"
+
+[dependencies]
+serde = { version = "1.0.216", features = ["derive"] }
+
+[lib]
+doctest = false
