@@ -6,7 +6,7 @@ use std::path::{Path, PathBuf};
 
 use serde::{Deserialize, Serialize};
 
-/// [[`PathBufD`]] wrapper
+/// [`PathBufD`] wrapper
 #[derive(Serialize, Deserialize, Clone, Debug)]
 pub struct PathBufD(PathBuf);
 
@@ -40,7 +40,7 @@ impl PathBufD {
     }
 
     /// Creates an owned [`PathBufD`] with path adjoined to self.
-    pub fn join<P>(self, path: P) -> Self
+    pub fn join<P>(&self, path: P) -> Self
     where
         P: AsRef<Path>,
     {
