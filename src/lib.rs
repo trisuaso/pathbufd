@@ -216,6 +216,6 @@ pub fn pathbufd_fmt(args: Arguments) -> PathBufD {
 #[macro_export]
 macro_rules! pathd {
     ($($arg:tt)*) => {
-        pathbufd_fmt(std::format_args!($($arg)*)).to_string()
+        pathbufd::pathbufd_fmt(std::format_args!($($arg)*)).to_string()
     }
 }

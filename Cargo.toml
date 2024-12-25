@@ -2,7 +2,7 @@
 name = "pathbufd"
 version = "0.1.1"
 edition = "2021"
-description = "PathBuf with display + format macro"
+description = "PathBuf with Display + format macro"
 authors = ["trisuaso", "caffeineee"]
 repository = "https://github.com/trisuaso/pathbufd"
 license = "MIT"
