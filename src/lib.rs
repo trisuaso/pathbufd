@@ -8,7 +8,7 @@ use std::cmp::Eq;
 use serde::{Deserialize, Serialize};
 
 /// [`PathBufD`] wrapper
-#[derive(Serialize, Deserialize, Clone, PartialEq, Eq)]
+#[derive(Serialize, Deserialize, Clone, PartialEq, Eq, Debug)]
 pub struct PathBufD(PathBuf);
 
 impl PathBufD {
