@@ -7,7 +7,7 @@ use std::cmp::Eq;
 
 use serde::{Deserialize, Serialize};
 
-/// [`PathBufD`] wrapper
+/// [`PathBuf`] wrapper
 #[derive(Serialize, Deserialize, Clone, PartialEq, Eq, Debug)]
 pub struct PathBufD(PathBuf);
 
@@ -30,6 +30,11 @@ impl PathBufD {
     /// Coerces to a [`Path`] slice.
     pub fn as_path(&self) -> &Path {
         self.0.as_path()
+    }
+
+    /// Gets `Vec<u8>` representation of the inner string.
+    pub fn as_bytes(&self) -> Vec<u8> {
+        self.to_string().as_bytes().to_owned()
     }
 
     /// Extends self with path.
@@ -193,7 +198,7 @@ impl From<PathBufD> for PathBuf {
 }
 
 // macro
-/// Format `Arguments` into a [`PathBufD`]
+/// Format [`Arguments`] into a [`PathBufD`]
 pub fn pathbufd_fmt(args: Arguments) -> PathBufD {
     let string = if let Some(s) = args.as_str() {
         s
@@ -201,7 +206,7 @@ pub fn pathbufd_fmt(args: Arguments) -> PathBufD {
         &args.to_string()
     };
 
-    let mut pathbufd = PathBufD(PathBuf::new());
+    let mut pathbufd = PathBufD::new();
     for split in string.split("/") {
         if split.is_empty() {
             pathbufd.push("/");
