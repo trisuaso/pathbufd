@@ -1,6 +1,7 @@
 # PathBufD
 
-`PathBuf` but with `Display` and a macro similar to `format!` for formatting.
+<!-- `PathBuf` but with `Display` and a macro similar to `format!` for formatting. -->
+A wrapper of `std::path::PathBuf` that implements `Display` and simplifies usage by introducing a macro with a style similar to `format!` for interpolating paths.
 
 Implements every (stable) API from [`PathBuf`](https://doc.rust-lang.org/std/path/struct.PathBuf.html) + some extras.
 

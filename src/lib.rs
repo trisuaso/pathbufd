@@ -3,11 +3,12 @@ use std::env::current_dir;
 use std::ffi::{OsStr, OsString};
 use std::fmt::{Arguments, Display};
 use std::path::{Path, PathBuf};
+use std::cmp::Eq;
 
 use serde::{Deserialize, Serialize};
 
 /// [`PathBufD`] wrapper
-#[derive(Serialize, Deserialize, Clone, Debug)]
+#[derive(Serialize, Deserialize, Clone, PartialEq, Eq)]
 pub struct PathBufD(PathBuf);
 
 impl PathBufD {
